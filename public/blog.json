@@ -1,0 +1,69 @@
+[
+    {
+        "_id": 1,
+        "author": "Hijen",
+        "title": "JavaScript Patterns Workshop",
+        "description": "The content is based on Patterns.dev - a free online resource on design patterns and component patterns for building powerful web apps with vanilla JavaScript and React.The patterns covered on this website and in the workshop can guide you when facing a problem other developers have encountered many times before, but are not a blunt tool for jamming into every scenario. The goal is to raise awareness to certain patterns, the problems they solve, and their implementation.",
+        "views": 0,
+        "tags": [
+            "js",
+            "javascript",
+            "pattern",
+            "workshop"
+        ]
+    },
+    {
+        "_id": 2,
+        "author": "Vincent",
+        "title": "JReact JS Best Practices",
+        "description": "Having worked across sites raking in over 50 billion website visits annually, I write about tech topics and teach engineers to have solid foundations that will help them get ahead in their career. I also build awesome products for digital nomads, check it out!\\nReact is a popular JavaScript library for building user interfaces, and it has a strong ecosystem of tools, libraries, and best practices that can help developers build efficient and maintainable applications. Here are some best practices to keep in mind when working with React:\\nUse functional components whenever possible: Functional components are simpler and easier to read than class-based components, and they can often accomplish the same tasks. They also have better performance because they don’t have the overhead of managing state and lifecycle methods.\\nUse hooks: Hooks are a new feature in React that allow you to use state and other React features without writing a class. They can make your code simpler and easier to understand, and they can also improve performance because they avoid the overhead of class components.\\nUse the React context API for shared state: The context API is a way to share state between components without having to pass props down through multiple levels of the component tree. This can make your code cleaner and easier to understand, and it can also improve performance because it avoids unnecessary prop-drilling.\\nUse the React memo HOC for performance: The React memo higher-order component (HOC) is a way to optimize the performance of your functional components by memoizing them. This means that the component will only re-render if its props have changed, which can improve the overall performance of your application.\\nUse the React dev tools: The React dev tools are a browser extension that allows you to inspect the component tree of your application, view the current state and props of each component, and perform other debugging tasks. They can be a valuable tool for understanding how your application works and for finding and fixing issues.\\nFollow the React style guide: The React style guide is a set of recommendations for writing clean, maintainable code with React. It covers topics like naming conventions, formatting, and structuring your code, and following these guidelines can help you write code that is easy for others to understand and work with.\\nUse a linter: A linter is a tool that checks your code for mistakes and issues, and it can help you catch problems before they become serious issues. There are many linters available for React, and using one can help you write more consistent and reliable code.\\nBy following these best practices, you can build more efficient and maintainable applications with React.",
+        "views": 0,
+        "tags": [
+            "Js",
+            "Java Script",
+            "React",
+            "Reactjs",
+            "Software Engineering"
+        ]
+    },
+    {
+        "_id": 3,
+        "author": "Anthony",
+        "title": "7 free Tools for the Modern Web Developers ",
+        "description": "FreeCodeCamp is a non-profit organization that consists of an interactive learning web platform, an online community forum, chat rooms, online publications, and local organizations that intend to make learning web development accessible to anyone.//nPostman is an API platform for building and using APIs. It’s a must-have tool//nIt is a collection of hundreds of components which you can copy-paste into your project & customize as per your needs!",
+        "views": 20,
+        "tags": [
+            "Programming",
+            "Software Engineering",
+            "Technology",
+            "Java Script",
+            "Software Development"
+        ]
+    },
+    {
+        "_id": 4,
+        "author": "Hallbet",
+        "title": "How to Build Your Own SaaS – PagerDuty Clone",
+        "description": "One of the best ways to learn software development is to create a slimmed-down version of software you use every day to get a better understanding of how it might work. This process helps you understand the problem space constraints and techniques required to build a real-world use-case.\\nWe just published a course on the freeCodeCamp.org YouTube channel that will teach you how to build your own SaaS app. In this case, a PagerDuty clone.\\nAnia Kubów developed this course. She creates popular software tutorials on both the freeCodeCamp channel and her own channel.\\nIn this tutorial, Ania will teach you how to build a dashboard to let you know if your app is down. And if your app goes down you will be notified via email and SMS. This is a clone of the popuOne of the best ways to learn software development is to create a slimmed-down version of software you use every day to get a better understanding of how it might work. This process helps you understand the problem space constraints and techniques required to build a real-world use-case.\\nWe just published a course on the freeCodeCamp.org YouTube channel that will teach you how to build your own SaaS app. In this case, a PagerDuty clone.\\nAnia Kubów developed this course. She creates popular software tutorials on both the freeCodeCamp channel and her own channel.\\nIn this tutorial, Ania will teach you how to build a dashboard to let you know if your app is down. And if your app goes down you will be notified via email and SMS. This is a clone of the popu",
+        "views": 0,
+        "tags": [
+            "Js",
+            "Java Script",
+            "Software Engineering"
+        ]
+    },
+    {
+        "_id": 5,
+        "author": "Jesika",
+        "title": "How Webpack works?",
+        "description": "Webpack is a commonly used library among modern frontend-based applications. It is one of the popular javascript bundlers. It is now a decade-old and battle-tested library. Many of the full-fledged frontend frameworks like NextJS, and Gatsby use webpack for bundling and compilation purposes by default. If you ask someone what webpack is, they will answer that it is a javascript bundler. If you go a bit more in depth and ask why we need a javascript bundler and how it works, only the curious might be able to answer satisfactorily. It isn’t anyone’s fault, modern frontend libraries are packaged in a way that you don’t need to worry about what happens under the hood. If we take an example of a ReactJS application configured through the create-react-app library, it takes care of the configuration of bundler and transpilers. Developers can immediately start building the application through the knowledge of ReactJS. If one wants to master the art of building fast and performant front-end applications, one needs to have a clear mental model of the functioning of all these libraries. In this article, we will talk about why we need a javascript bundler in the first place and will explore how one of the most popular javascript bundlers, webpack, works under the hood.",
+        "views": 0,
+        "tags": [
+            "Js",
+            "Java Script",
+            "React",
+            "Reactjs",
+            "Software Engineering"
+        ]
+    }
+]
