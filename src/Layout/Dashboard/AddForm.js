@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Dashboard = () => {
+const AddForm = () => {
     return (
         <div>
-            From Dashboard
+            from addform
         </div>
     );
 };
 
-export default Dashboard;
+export default AddForm;

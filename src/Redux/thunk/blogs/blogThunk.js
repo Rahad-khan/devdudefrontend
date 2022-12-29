@@ -3,12 +3,11 @@ import { getBlogs } from "../../actionCreators/blogActionCreator";
 export const loadBlogData = () => {
 
     return async (dispatch, getState) => {
-        const res = await fetch("blog.json");
-        console.log(res);
+        const res = await fetch("http://localhost:5000/blogs");
         const data = await res.json();
 
-        if (data.length) {
-            dispatch(getBlogs(data))
+        if (data.data.length) {
+            dispatch(getBlogs(data.data))
         }
     };
 }

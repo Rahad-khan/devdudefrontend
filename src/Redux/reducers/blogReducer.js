@@ -1,4 +1,4 @@
-import { FETCH_BLOGS } from "../actionTypes/blogActionTypes";
+import { GET_CONTENT } from "../actionTypes/blogActionTypes";
 
 const initialState = {
     blogs: []
@@ -6,7 +6,7 @@ const initialState = {
 
 const blogReducer = (state = initialState, action) => {
     switch (action.type) {
-        case FETCH_BLOGS: {
+        case GET_CONTENT: {
             return {
                 ...state,
                 blogs: action.payload
