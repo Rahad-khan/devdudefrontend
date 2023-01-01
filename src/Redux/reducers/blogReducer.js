@@ -1,4 +1,4 @@
-import { ADD_CONTENT, DELETE_CONTENT, GET_CONTENT } from "../actionTypes/blogActionTypes";
+import { ADD_CONTENT, DELETE_CONTENT, GET_CONTENT, UPDATE_CONTENT } from "../actionTypes/blogActionTypes";
 
 const initialState = {
     blogs: []
@@ -16,6 +16,15 @@ const blogReducer = (state = initialState, action) => {
             return {
                 ...state,
                 blogs: [...state.blogs, action.payload]
+            }
+        }
+        case UPDATE_CONTENT: {
+            const blogs = [...state.blogs]
+            const blogIndex = blogs.findIndex(blog => blog._id === action.payload._id)
+
+            return {
+                ...state,
+                blogs: [...state.blogs.slice(0, blogIndex), action.payload, ...state.blogs.slice(blogIndex + 1)]
             }
         }
         case DELETE_CONTENT: {

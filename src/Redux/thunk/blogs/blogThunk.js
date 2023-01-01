@@ -1,4 +1,5 @@
-import { addBlog, deleteBlog, getBlogs } from "../../actionCreators/blogActionCreator";
+import { addBlog, deleteBlog, getBlogs, updateBlog } from "../../actionCreators/blogActionCreator";
+import { toast } from 'react-toastify'
 
 export const loadBlogData = () => {
 
@@ -11,7 +12,7 @@ export const loadBlogData = () => {
         }
     };
 };
-export const addBlogThunk = (blogData) => {
+export const addBlogThunk = (blogData, reset) => {
 
     return async (dispatch, getState) => {
         const res = await fetch("http://localhost:5000/blog", {
@@ -29,6 +30,8 @@ export const addBlogThunk = (blogData) => {
                 ...blogData
 
             }))
+            toast.success("Blog Posted Successfully");
+            reset()
         }
     };
 };
@@ -39,10 +42,28 @@ export const deleteBlogThunk = (id) => {
             method: 'DELETE',
         });
         const data = await res.json();
-        console.log(`file: blogThunk.js:42 ~ return ~ data`, data)
-
         if (data.deletedCount) {
             dispatch(deleteBlog(id))
+        }
+    };
+};
+export const updateBlogThunk = (id, doc, reset) => {
+
+    return async (dispatch, getState) => {
+        const res = await fetch(`http://localhost:5000/blog/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(doc)
+        });
+        const data = await res.json();
+        if (data.modifiedCount) {
+            toast.success("Blog Updated Successfully")
+            dispatch(updateBlog({
+                _id: id,
+                ...doc
+            }))
         }
     };
 };

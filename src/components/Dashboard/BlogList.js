@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { deleteBlogThunk, loadBlogData } from '../../Redux/thunk/blogs/blogThunk';
 
 const BlogList = () => {
@@ -50,7 +51,9 @@ const BlogList = () => {
                                             {blog.views}
                                         </td>
                                         <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap space-x-2">
-                                            <button type="button" className="inline-block px-4 py-2.5 bg-blue-400 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out">Update</button>
+                                            <Link to={`updateBlog/${blog._id}`}>
+                                                <button type="button" className="inline-block px-4 py-2.5 bg-blue-400 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out">Update</button>
+                                            </Link>
 
                                             <button onClick={() => handleDelete(blog._id)} type="button" className="inline-block px-4 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out">Delete</button>
 

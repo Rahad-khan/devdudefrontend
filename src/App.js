@@ -4,6 +4,8 @@ import {
 } from "react-router-dom";
 import routerRoot from "./components/Router";
 import store from "./Redux/store";
+import { ToastContainer } from 'react-toastify';
+
 
 const router = routerRoot
 
@@ -13,6 +15,7 @@ function App() {
       <Provider store={store}>
         <RouterProvider router={router} />
       </Provider>
+      <ToastContainer />
     </div>
   );
 }

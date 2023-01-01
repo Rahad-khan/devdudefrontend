@@ -1,31 +1,38 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { addBlogThunk } from "../../Redux/thunk/blogs/blogThunk";
+import { useLoaderData, useParams } from "react-router-dom";
+import { updateBlogThunk } from "../../Redux/thunk/blogs/blogThunk";
 
-const AddForm = () => {
-    const { register, handleSubmit } = useForm();
+const UpdateForm = () => {
+    const { register, handleSubmit, reset } = useForm();
     const dispatch = useDispatch();
 
+    const { data: blog } = useLoaderData();
+    const { views, createdAt, _id } = blog
+
+
+
+
+
+
     const date = new Date();
-    console.log(`file: AddForm.js:10 ~ AddForm ~ date`, date)
 
 
     const submit = (data) => {
-        const { title, author, description, image } = data;
+        const { title, author, description, image, } = data;
         const product = {
-            title, author, description, image,
+            title, author, description, image, views,
             tags: [
                 data.tag1,
                 data.tag2,
                 data.tag3,
                 data.tag4,
             ],
-            views: 0,
-            createdAt: date
+            createdAt,
+            updatedAt: date
         };
-        console.log(product);
-        dispatch(addBlogThunk(product));
+        dispatch(updateBlogThunk(_id, product));
     };
 
     return (
@@ -38,26 +45,26 @@ const AddForm = () => {
                     <label className='mb-2' htmlFor='title'>
                         Title
                     </label>
-                    <input type='text' id='title' {...register("title")} required />
+                    <input type='text' defaultValue={blog.title} id='title' {...register("title")} required />
                 </div>
                 <div className='flex flex-col w-full max-w-xs'>
                     <label className='mb-2' htmlFor='author'>
                         Author
                     </label>
-                    <input type='text' name='author' id='author' {...register("author")} required />
+                    <input type='text' defaultValue={blog.author} name='author' id='author' {...register("author")} required />
                 </div>
 
                 <div className='flex flex-col w-full max-w-xs'>
                     <label className='mb-3' htmlFor='description'>
                         Description
                     </label>
-                    <textarea type="textarea" name='description' id='description' {...register("description")} required ></textarea>
+                    <textarea type="textarea" defaultValue={blog.description} name='description' id='description' {...register("description")} required ></textarea>
                 </div>
                 <div className='flex flex-col w-full max-w-xs'>
                     <label className='mb-2' htmlFor='image'>
                         Image
                     </label>
-                    <input type='text' name='image' id='image' {...register("image")} required />
+                    <input type='text' defaultValue={blog.image} name='image' id='image' {...register("image")} required />
                 </div>
 
                 <div className='flex flex-col w-full max-w-xs'>
@@ -65,7 +72,7 @@ const AddForm = () => {
                         Tag 1
                     </label>
                     <input
-                        type='text'
+                        type='text' defaultValue={blog.tags[0]}
                         name='tag1'
                         id='tag1'
                         {...register("tag1")}
@@ -76,7 +83,7 @@ const AddForm = () => {
                         Tag 2
                     </label>
                     <input
-                        type='text'
+                        type='text' defaultValue={blog.tags[1]}
                         name='tag2'
                         id='tag2'
                         {...register("tag2")}
@@ -87,7 +94,7 @@ const AddForm = () => {
                         Tag 3
                     </label>
                     <input
-                        type='text'
+                        type='text' defaultValue={blog.tags[2]}
                         name='tag3'
                         id='tag3'
                         {...register("tag3")}
@@ -98,7 +105,7 @@ const AddForm = () => {
                         Tag 4
                     </label>
                     <input
-                        type='text'
+                        type='text' defaultValue={blog.tags[3]}
                         name='tag4'
                         id='tag4'
                         {...register("tag4")}
@@ -118,4 +125,4 @@ const AddForm = () => {
     );
 };
 
-export default AddForm;
+export default UpdateForm;

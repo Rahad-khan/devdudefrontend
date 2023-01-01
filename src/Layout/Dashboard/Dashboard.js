@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Slidebar from './Slidebar';
+import Slidebar from '../../components/Dashboard/Slidebar';
 
 const Dashboard = () => {
     return (

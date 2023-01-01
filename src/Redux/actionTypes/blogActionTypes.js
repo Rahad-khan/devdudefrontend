@@ -5,3 +5,7 @@ export const ADD_CONTENT = "ADD_CONTENT";
 export const UPDATE_CONTENT = "UPDATE_CONTENT";
 
 export const DELETE_CONTENT = "DELETE_CONTENT";
+
+export const LAST_UPLOAD = "LAST_UPLOAD";
+
+export const FAST_UPLOAD = "FAST_UPLOAD";
