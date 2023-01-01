@@ -8,8 +8,6 @@ const AddForm = () => {
     const dispatch = useDispatch();
 
     const date = new Date();
-    console.log(`file: AddForm.js:10 ~ AddForm ~ date`, date)
-
 
     const submit = (data) => {
         const { title, author, description, image } = data;
@@ -24,7 +22,6 @@ const AddForm = () => {
             views: 0,
             createdAt: date
         };
-        console.log(product);
         dispatch(addBlogThunk(product, reset));
     };
 
