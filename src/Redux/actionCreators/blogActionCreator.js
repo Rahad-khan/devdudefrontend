@@ -1,4 +1,4 @@
-import { ADD_CONTENT, DELETE_CONTENT, GET_CONTENT, LAST_UPLOAD, UPDATE_CONTENT } from "../actionTypes/blogActionTypes"
+import { ADD_CONTENT, DELETE_CONTENT, FIRST_UPLOAD, GET_CONTENT, LAST_UPLOAD, UPDATE_CONTENT } from "../actionTypes/blogActionTypes"
 
 export const getBlogs = (blogs) => {
     return {
@@ -27,6 +27,11 @@ export const updateBlog = (content) => {
 export const lastUpload = () => {
     return {
         type: LAST_UPLOAD,
+    }
+};
+export const firstUpload = () => {
+    return {
+        type: FIRST_UPLOAD,
     }
 };
 

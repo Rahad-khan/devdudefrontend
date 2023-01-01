@@ -1,4 +1,4 @@
-import { ADD_CONTENT, DELETE_CONTENT, GET_CONTENT, UPDATE_CONTENT } from "../actionTypes/blogActionTypes";
+import { ADD_CONTENT, DELETE_CONTENT, FAST_UPLOAD, FIRST_UPLOAD, GET_CONTENT, LAST_UPLOAD, UPDATE_CONTENT } from "../actionTypes/blogActionTypes";
 
 const initialState = {
     blogs: []
@@ -31,6 +31,20 @@ const blogReducer = (state = initialState, action) => {
             return {
                 ...state,
                 blogs: state.blogs.filter(blog => blog._id !== action.payload)
+            }
+        }
+        case FIRST_UPLOAD: {
+            const blogs = [...state.blogs]
+            return {
+                ...state,
+                blogs: blogs.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))
+            }
+        }
+        case LAST_UPLOAD: {
+            const blogs = [...state.blogs]
+            return {
+                ...state,
+                blogs: blogs.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
             }
         }
         default:

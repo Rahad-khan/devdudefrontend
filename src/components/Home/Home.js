@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { firstUpload, lastUpload } from '../../Redux/actionCreators/blogActionCreator';
 import { loadBlogData } from '../../Redux/thunk/blogs/blogThunk';
 import Blog from './Blog';
 
 const Home = () => {
-    const blogs = useSelector(state => state.blogs)
+    const blogs = useSelector(state => state.blogs);
 
     const dispatch = useDispatch();
 
@@ -13,7 +14,10 @@ const Home = () => {
     }, [dispatch]);
 
     const handleLastUpload = () => {
-
+        dispatch(lastUpload())
+    }
+    const handleFirstUpload = () => {
+        dispatch(firstUpload())
     }
 
     return (
@@ -59,6 +63,7 @@ const Home = () => {
                                 </li>
                                 <li>
                                     <button
+                                        onClick={handleFirstUpload}
                                         className=" dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
                                     >First Upload </button>
                                 </li>

@@ -8,4 +8,4 @@ export const DELETE_CONTENT = "DELETE_CONTENT";
 
 export const LAST_UPLOAD = "LAST_UPLOAD";
 
-export const FAST_UPLOAD = "FAST_UPLOAD";
+export const FIRST_UPLOAD = "FIRST_UPLOAD";
