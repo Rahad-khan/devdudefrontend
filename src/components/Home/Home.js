@@ -6,7 +6,8 @@ import Blog from './Blog';
 import BlogModal from './BlogModal';
 
 const Home = () => {
-    const blogs = useSelector(state => state.blogs);
+    const blogs = useSelector(state => state.blogState.blogs);
+
 
     const dispatch = useDispatch();
 

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { deleteBlogThunk, loadBlogData } from '../../Redux/thunk/blogs/blogThunk';
 
 const BlogList = () => {
-    const { blogs } = useSelector(state => state);
+    const { blogs } = useSelector(state => state.blogState);
     const dispatch = useDispatch();
 
     useEffect(() => {
