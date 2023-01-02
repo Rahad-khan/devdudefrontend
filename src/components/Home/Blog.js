@@ -4,8 +4,8 @@ const Blog = ({ blog, setIsModalOpen }) => {
     const { title, description, author, tags } = blog;
 
     return (
-        <div className="flex justify-center">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
+        <label onClick={() => setIsModalOpen(blog)} htmlFor="blogModal" className="flex justify-center cursor-pointer">
+            <div className="rounded-lg shadow-lg bg-white max-w-sm relative">
                 <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt="" />
                 <div className="p-6">
                     <h5 className="text-gray-900 text-xl font-medium mb-2">{title}</h5>
@@ -14,12 +14,13 @@ const Blog = ({ blog, setIsModalOpen }) => {
                         {description.slice(0, 100)}...
                     </p>
                 </div>
-                <button type="button"
-                    onClick={() => setIsModalOpen(true)}>
-                    Launch demo modal long
-                </button>
+                <div className='absolute bottom-3 right-3'>
+
+                    {/* The button to open modal */}
+                    < label onClick={() => setIsModalOpen(blog)} htmlFor="blogModal" className="btn btn-sm" > Read More </ label>
+                </div>
             </div>
-        </div>
+        </label>
     );
 };
 
