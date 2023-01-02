@@ -22,7 +22,7 @@ const Home = () => {
         dispatch(firstUpload())
     }
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(null);
 
     if (isModalOpen) {
         dispatch(addToHistory(isModalOpen))

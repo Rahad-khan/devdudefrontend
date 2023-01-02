@@ -34,6 +34,11 @@ const Header = () => {
                             About
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink to="history" style={({ isActive }) => isActive ? activeStyle : undefined}>
+                            History
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
         </div>

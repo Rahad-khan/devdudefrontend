@@ -6,6 +6,7 @@ import AddForm from "./Dashboard/AddForm";
 import BlogList from "./Dashboard/BlogList";
 import UpdateForm from "./Dashboard/UpdateForm";
 import Home from "./Home/Home";
+import ReadingHistory from "./ReadingHistory";
 
 const routerRoot = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const routerRoot = createBrowserRouter([
             {
                 path: "about",
                 element: <About />,
+            },
+            {
+                path: "history",
+                element: <ReadingHistory />,
             },
         ]
     },
