@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { firstUpload, lastUpload } from '../../Redux/actionCreators/blogActionCreator';
+import { addToHistory, firstUpload, lastUpload } from '../../Redux/actionCreators/blogActionCreator';
 import { loadBlogData } from '../../Redux/thunk/blogs/blogThunk';
 import Blog from './Blog';
 import BlogModal from './BlogModal';
@@ -22,7 +22,11 @@ const Home = () => {
         dispatch(firstUpload())
     }
 
-    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    if (isModalOpen) {
+        dispatch(addToHistory(isModalOpen))
+    }
 
     return (
         <div className='w-10/12 mx-auto'>

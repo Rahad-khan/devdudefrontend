@@ -5,19 +5,19 @@ const initialState = {
 };
 
 const historyReducer = (state = initialState, action) => {
+    const exist = state.history.find(blog => blog._id === action.payload._id);
     switch (action.type) {
         case READ_HISTORY: {
-            const exist = state.history.find(blog => blog._id === action.payload._id)
             if (exist) {
                 const rest = state.history.filter(blog => blog._id !== action.payload._id);
                 return {
                     ...state,
-                    history: action.payload, ...rest
+                    history: [action.payload, ...rest]
                 }
             } else {
                 return {
                     ...state,
-                    history: action.payload, ...state.history
+                    history: [action.payload, ...state.history]
                 }
             }
         }
