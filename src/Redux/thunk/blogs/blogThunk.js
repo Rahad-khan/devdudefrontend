@@ -4,7 +4,7 @@ import { toast } from 'react-toastify'
 export const loadBlogData = () => {
 
     return async (dispatch, getState) => {
-        const res = await fetch("http://localhost:5000/blogs");
+        const res = await fetch("https://dev-dude-backend.vercel.app/blogs");
         const data = await res.json();
 
         if (data.data.length) {
@@ -15,7 +15,7 @@ export const loadBlogData = () => {
 export const addBlogThunk = (blogData, reset) => {
 
     return async (dispatch, getState) => {
-        const res = await fetch("http://localhost:5000/blog", {
+        const res = await fetch("https://dev-dude-backend.vercel.app/blog", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -38,7 +38,7 @@ export const addBlogThunk = (blogData, reset) => {
 export const deleteBlogThunk = (id) => {
 
     return async (dispatch, getState) => {
-        const res = await fetch(`http://localhost:5000/blog/${id}`, {
+        const res = await fetch(`https://dev-dude-backend.vercel.app/blog/${id}`, {
             method: 'DELETE',
         });
         const data = await res.json();
@@ -50,7 +50,7 @@ export const deleteBlogThunk = (id) => {
 export const updateBlogThunk = (id, doc, reset) => {
 
     return async (dispatch, getState) => {
-        const res = await fetch(`http://localhost:5000/blog/${id}`, {
+        const res = await fetch(`https://dev-dude-backend.vercel.app/blog/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

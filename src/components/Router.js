@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import Main from "../Layout/Main";
-import About from "./About";
 import AddForm from "./Dashboard/AddForm";
 import BlogList from "./Dashboard/BlogList";
 import UpdateForm from "./Dashboard/UpdateForm";
@@ -18,10 +17,6 @@ const routerRoot = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-            },
-            {
-                path: "about",
-                element: <About />,
             },
             {
                 path: "history",
@@ -45,7 +40,7 @@ const routerRoot = createBrowserRouter([
             },
             {
                 path: "updateBlog/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/blog/${params.id}`),
+                loader: ({ params }) => fetch(`https://dev-dude-backend.vercel.app/blog/${params.id}`),
                 element: <UpdateForm />
             }
         ]

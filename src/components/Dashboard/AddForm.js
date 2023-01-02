@@ -54,7 +54,7 @@ const AddForm = () => {
                     <label className='mb-2' htmlFor='image'>
                         Image
                     </label>
-                    <input type='text' name='image' id='image' {...register("image")} required />
+                    <input type='text' placeholder="Enter Image URL" name='image' id='image' {...register("image")} required />
                 </div>
 
                 <div className='flex flex-col w-full max-w-xs'>

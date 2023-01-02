@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Blog = ({ blog, setIsModalOpen }) => {
-    const { title, description, author, tags } = blog;
+    const { title, description, author, tags, image } = blog;
 
     return (
         <label onClick={() => setIsModalOpen(blog)} htmlFor="blogModal" className="flex justify-center cursor-pointer">
             <div className="rounded-lg shadow-lg bg-white max-w-sm relative">
-                <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt="" />
+                <img className="rounded-t-lg" src={image} alt={title} />
                 <div className="p-6">
                     <h5 className="text-gray-900 text-xl font-medium mb-2">{title}</h5>
                     <p className='font-semibold py-2'>Author:{author}</p>
